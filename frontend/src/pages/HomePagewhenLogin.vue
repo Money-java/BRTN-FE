@@ -44,21 +44,6 @@
     </div>
 
 
-        </div>
-      </div>
-
-      <div class="potBeeContainer">
-        <img class="beeImg" src="@/assets/images/bee/bee_update.png">
-        <img class="pot" :src="getImageForPercent">
-        <div class="potComment">
-          <p class="date">{{ month }}월 {{ day }}일</p>
-          <!-- <p>{{ todayCheckedRoutinesCount }} / {{ todayActiveRoutinesCount }}개 달성</p> -->
-          <p class="percent">{{ todayPercent }}% 달성</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="monthlyBRTN">
 
 
@@ -150,7 +135,7 @@
 
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, onBeforeMount, computed } from 'vue';
 import axios from 'axios';
 import Header from '@/components/global/Header.vue';
 import CustomModal from '@/components/Modal.vue';
