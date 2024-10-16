@@ -9,12 +9,15 @@
     <!-- 통합된 participants와 checkedHabit 정보 -->
     <div class="habit-info">
       <p class="participants">
-        현재 이 습관에 {{ participants }} 명이 참여 중이고,<br />
-        지금까지 인증샷은 총 {{ checkedHabit }}개가 올라왔어요!
+        현재 이 루틴에 <strong>{{ participants }} 명</strong>이 참여 중이고,<br />
+        지금까지 인증샷은 총 <strong>{{ checkedHabit }}개</strong>가 올라왔어요!
       </p>
     </div>
 
-    <img :src="post.imageURL" alt="Post Image" class="post-image" />
+    <div class="post-image-container">
+      <img :src="post.imageURL" alt="Post Image" class="post-image" />
+    </div>
+    
     <div class="post-details">
       <p class="post-content">{{ post.content }}</p>
       <p class="post-hashtag">{{ post.hashtag }}</p>
@@ -186,6 +189,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  justify-content: flex-start; 
 }
 
 .user-icon {
@@ -205,12 +209,13 @@ onMounted(() => {
   background-color: #fdf0ca;
   border-radius: 8px;
   padding: 10px 20px;
-  display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  text-align: center;
+  text-align: left; /* 왼쪽 정렬 */
   margin-bottom: 15px;
+  /* display: inline-block; */
   position: relative;
+  float: left;
 }
 
 .habit-title::before {
@@ -231,6 +236,7 @@ onMounted(() => {
   text-align: left;
   width: max-content;
   max-width: 100%;
+  clear: both;
 }
 
 .participants {
@@ -238,21 +244,38 @@ onMounted(() => {
   font-size: 14px;
 }
 
+.post-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 세로 중앙 정렬 */
+  width: 100%; /* 부모 요소의 전체 너비 */
+}
+
 .post-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  width: 400px;
+  height: 400px;
+  border-radius: 0;
+  border: 1px solid rgb(133, 133, 133);
   margin-top: 15px;
   margin-bottom: 10px;
+  object-fit: cover; /* 이미지 비율을 유지하면서 잘리게 설정 */
 }
 
 .post-details {
   margin-top: 10px;
+  /* font-size: 13px; */
+  text-align: left;
 }
 
 .post-hashtag {
   color: #3e4b93;
+  font-size: 13px;
+  
+}
 
+.post-date {
+  color: rgb(82, 82, 82);
+  font-size: 13px;
 }
 
 .post-content,
@@ -265,7 +288,7 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .like-button,

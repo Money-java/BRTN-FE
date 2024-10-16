@@ -47,11 +47,13 @@ html {
 
 .content {
   display: flex;
+  text-align: center;
 }
 
 aside {
   width: 200px; /* 고정 너비 */
-  min-width: 200px; /* 최소 너비 설정 */
+  min-width: 20px; /* 최소 너비 설정 */
+  min-height: 100vh;
   background-color: #fbe382;
   padding: 20px;
   border-radius: 0px;
@@ -65,10 +67,12 @@ aside {
   padding: 10px;
   color: #2d2d2d;
   text-decoration: none;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  /* background-color: transparent; */
   border-radius: 0px;
-  text-align: left;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+  font-weight: 800;
+  /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 

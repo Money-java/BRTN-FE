@@ -1,16 +1,25 @@
 <template>
   <div class="container">
-    <h1>Explore</h1>
     <div class="top-bar">
       <div class="category-tags">
-        <button
+        <!-- <button
           v-for="category in categoryOptions"
           :key="category"
           @click="handleCategoryFilterChange(category)"
           :class="{ active: selectedCategory === category }"
         >
           {{ category }}
-        </button>
+        </button> -->
+        <select v-model="selectedCategory" @change="handleCategoryFilterChange">
+          <option value="전체">전체</option>
+          <option
+            v-for="category in categoryOptions"
+            :key="category"
+            :value="category"
+          >
+            {{ category }}
+          </option>
+        </select>
       </div>
       <!-- 검색창 -->
       <div class="search-routine">
@@ -50,7 +59,7 @@ import axios from 'axios';
 import PostItem from '@/components/PostCommunity/PostItem.vue';
 import Paginate from 'vuejs-paginate-next';
 
-const selectedCategory = ref('전체');
+const selectedCategory = ref('참여루틴');
 
 const categoryOptions = [
   '참여루틴',
@@ -215,6 +224,7 @@ html {
 
 .container {
   max-width: 1200px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 20px;
   background-color: #fffbee;
@@ -248,9 +258,9 @@ h1 {
   padding: 8px 16px; /* 높이를 일관되게 설정 */
   border-radius: 0px;
   border: none;
-  background-color: #f7d794;
-  color: #333;
-  font-size: 1em; /* 폰트 크기를 동일하게 설정 */
+  background-color: #000000;
+  color: white;
+  font-size: 14px; /* 폰트 크기를 동일하게 설정 */
   line-height: normal; /* 라인 높이 설정 */
   cursor: pointer;
   transition: background-color 0.3s; /* 부드러운 전환 효과 */
@@ -274,14 +284,11 @@ h1 {
 }
 
 .search-routine input[type='text'] {
-  padding: 6px 12px; /* 공백 추가 */
-  border-radius: 0px;
-  border: none;
-  background-color: #f3f3f3;
-  margin-right: 10px;
-  border-width: px;
-  border-style: dashed;
-  border-color: #ccc;
+  height: 30px;
+  margin-right: 5px;
+  font-size: 14px;
+  /* 버튼과 입력창 사이 간격 */
+  border: 1px solid black;
 }
 
 .pagination {
@@ -304,5 +311,14 @@ h1 {
   color: #888;
   font-size: 1.2em;
   margin-top: 20px;
+}
+
+.category-tags select {
+  padding: 8px 16px;
+  border-radius: 0px;
+  border: 1px solid #000000;
+  background-color: #fffbee;
+  font-size: 14px;
+  cursor: pointer;
 }
 </style>

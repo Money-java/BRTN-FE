@@ -826,6 +826,7 @@ onMounted(() => {
     justify-content: center;
     /* text-align: center; */
     flex-direction: column;
+    /* width: 95%; */
 }
 
 .rank {
@@ -839,14 +840,18 @@ onMounted(() => {
 .card {
     border-radius: 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* width: 90%; */
 }
 
 .card-body {
     padding: 22px 15px;
+    /* width: 90%;
+    justify-content: center; */
 }
 
 .card-title {
     font-weight: 900;
+    font-size: 17px;
 }
 
 .subtitle {
@@ -862,6 +867,7 @@ onMounted(() => {
 
 .writerName {
     margin-left: 5px;
+    font-size: 13px;
 }
 
 .likeContainer {
@@ -879,11 +885,12 @@ onMounted(() => {
 }
 
 .likeImg {
-    width: 22px;
+    width: 18px;
 }
 
 .likeComment {
     margin-right: 10px;
+    font-size: 14px;
 }
 
 /* 챌린지 */
@@ -895,7 +902,7 @@ onMounted(() => {
 .type {
     background-color: black;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     padding: 4px 6px;
     margin-bottom: 10px;
 }
@@ -917,7 +924,7 @@ onMounted(() => {
 
 .challengeComment {
     font-size: 13px;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-bottom: 5px;
     text-align: center;
 }

@@ -383,6 +383,7 @@ onMounted(getUserIdFromLocal);
 .routine-content {
   background-color: #ffd73958;
   margin-bottom: 60px;
+  
   /* height: 100%; */
 }
 
@@ -395,12 +396,14 @@ onMounted(getUserIdFromLocal);
   margin-top: 30px;
   text-align: center;
   font-size: normal;
+  
   /* font-weight: 700; */
 }
 
 .routine-content {
   max-height: 300px;
-  overflow-y: auto;
+  overflow: hidden; /* 스크롤바 숨기기 */
+  overflow-y: scroll; /* 스크롤 기능은 유지 */
 }
 
 .calendar-section {
@@ -547,5 +550,16 @@ onMounted(getUserIdFromLocal);
   border: 4px solid #ffd634b4; 
 }
 
+
+/* 스크롤바 */
+.routine-content::-webkit-scrollbar-thumb {
+  background-color: #dcdcdc; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바 끝 모서리 둥글게 */
+}
+
+.routine-content::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 스크롤바 트랙 색상 */
+  border-radius: 10px;
+}
 
 </style>

@@ -37,7 +37,7 @@
                 </button>
                 <ul class="dropdown-menu menu-item" aria-labelledby="dropdownMenuButton1">
                     <li><a href="/routine-community" class="dropdown-item">벌루틴 공유</a></li>
-                    <li><a href="/post-community/explore" class="dropdown-item" >허니샷 인증</a></li>
+                    <li><a href="/post-community/explore" class="dropdown-item" >허니 인증샷</a></li>
                 </ul>
             </div>
         </div>
